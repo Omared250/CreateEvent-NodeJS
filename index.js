@@ -1,20 +1,19 @@
 const express = require('express');
+require('dotenv').config();
 
 
 // create express server
 const app = express();
 
+// Public Directory
+app.use( express.static('public') );
+
 
 // routes
-app.get('/', (req, res) => {
-    console.log('/ needed');
-    res.json({
-        ok: true
-    })
-});
+// app.use('/api/events', require('./routes/events'));
 
 
 // Listening
-app.listen( 4001, () => {
-    console.log(`Server running on port ${ 4001 }`);
+app.listen( process.env.PORT, () => {
+    console.log(`Server running on port ${ process.env.PORT }`);
 } )
