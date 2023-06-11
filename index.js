@@ -5,5 +5,16 @@ const express = require('express');
 const app = express();
 
 
+// routes
+app.get('/', (req, res) => {
+    console.log('/ needed');
+    res.json({
+        ok: true
+    })
+});
+
+
 // Listening
-app.listen()
+app.listen( 4001, () => {
+    console.log(`Server running on port ${ 4001 }`);
+} )
