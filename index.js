@@ -8,9 +8,11 @@ const app = express();
 // Public Directory
 app.use( express.static('public') );
 
+// read and parse body
+app.use( express.json() );
 
 // routes
-// app.use('/api/events', require('./routes/events'));
+app.use('/api/events', require('./routes/events'));
 
 
 // Listening

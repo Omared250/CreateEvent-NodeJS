@@ -1,9 +1,11 @@
+const { response } = require("express");
 
 
-const createEvent = () => {
-    console.log({
+const createEvent = ( req, res = response ) => {
+    res.json({
         ok: true,
-        msg: 'Your first Event!!!'
+        msg: 'Your first Event!!!',
+        note: req.body
     });
 };
 
