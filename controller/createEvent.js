@@ -28,7 +28,10 @@ const createEvent = async( req, res = response ) => {
             event: event
         })
 
-        logger.error({ message: 'Error saving event', event: event });
+        logger.error('Error: ', {
+            message: err.message,
+            stack: err.stack
+        });
     }
 };
 
