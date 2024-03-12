@@ -1,4 +1,3 @@
-require('newrelic');
 const express = require('express');
 const { dbConnection } = require('./dataBase/config');
 require('dotenv').config();
