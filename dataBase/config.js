@@ -1,17 +1,17 @@
 const mongoose = require('mongoose');
+const logger = require('../winston-config');
 
-const dbConnection = () =>  {
-
-    try {
-        mongoose.connect( process.env.DB_CNN );
-        console.log('DB online');
-    } catch (err) {
-        console.log(err);
-        throw new Error('Error trying to initialice Data Base!')
-    }
-
+const dbConnection = async () => {
+  try {
+    await mongoose.connect(process.env.DB_CNN);
+    console.log('DB Online');
+  } catch (error) {
+    logger.error('Error initializing DB', {
+        message: error.message,
+        stack: error.stack,
+        name: error.name
+    });
+  }
 };
 
-module.exports = {
-    dbConnection,
-}
+module.exports = { dbConnection };
