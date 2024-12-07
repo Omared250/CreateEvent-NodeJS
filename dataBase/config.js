@@ -14,6 +14,4 @@ const dbConnection = async () => {
   }
 };
 
-// Testing CI/CD
-
 module.exports = { dbConnection };
