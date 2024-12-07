@@ -6,12 +6,14 @@ on:
       - '.github/workflows/**'
     branches:
       - main
+      - response_time_escenario
     
   pull_request:
     paths-ignore:
       - '.github/workflows/**'
     branches:
       - main
+      - response_time_escenario
 
 jobs:
   deploy:
