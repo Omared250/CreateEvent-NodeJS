@@ -14,6 +14,4 @@ const dbConnection = async () => {
   }
 };
 
-// Testing branch 
-
 module.exports = { dbConnection };
